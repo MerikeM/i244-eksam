@@ -21,6 +21,8 @@
     if ($_SERVER['REQUEST_METHOD']=='POST'){
         if (!isset($_POST['summa']) || empty($_POST['summa'])){
             $teade = "Palun sisestage algvaluuta summa <br>";
+        } else if (!is_numeric($_POST['summa'])){
+            $teade = "Palun sisestage summa täisarvuna<br>";
         }
         if (!isset($_POST['suund']) || (empty($_POST['suund']))){
             $teade = $teade . "Palun sisestage suund";
