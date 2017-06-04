@@ -5,10 +5,10 @@
     </head>
     <body>
         <form action="index.php" method="POST">
-            Algvaluuta summa: <input type="number" name="summa"><br>
+            Algvaluuta summa: <input type="number" name="summa" value="<?php echo (isset($_POST['summa']) ? $_POST['summa'] : "") ?>"><br>
             Suund: <br>
-            <input type="radio" name="suund" value="EU"> EUR > USD <br>
-            <input type="radio" name="suund" value="UE"> USD > EUR<br>
+            <input type="radio" name="suund" value="EU" <?php echo(isset($_POST['suund']) && $_POST['suund'] === 'EU' ? "checked" : "" )?>> EUR > USD <br>
+            <input type="radio" name="suund" value="UE" <?php echo(isset($_POST['suund']) && $_POST['suund'] === 'UE' ? "checked" : "" )?>> USD > EUR<br>
             <input type="submit" value="Arvuta">
         </form>
     </body>
@@ -37,7 +37,6 @@
             }
         }
     }
-
     echo $teade;
 
 ?>
